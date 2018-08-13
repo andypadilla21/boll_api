@@ -84,6 +84,13 @@ class AppController extends Controller
         $this->Auth->allow(['login','roles']);
     }
 
+    /**
+     * Método para iniciar una sesión.
+     * @param $emailorphone
+     * @param $password
+     * 
+     * @return redirectUrl()
+     */
     public function login(){
         if ($this->request->getSession()->read('Auth.User.emailorphone')) {
              return $this->redirect(array('controller' => 'Home', 'action' => 'index'));
